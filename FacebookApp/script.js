@@ -32,12 +32,11 @@ var newsFeed = [
 	}
 ];
 
-var userNamePrompt = prompt("What's your username?");
-var passwordPrompt = prompt("what's your password?");
+
 
 function isUserValid(username, password) {
 	for (var i=0; i < database.length; i++) {
-		if(database.[i].username === username&&&
+		if(database.[i].username === username &&
 			database[i].password === password) {
 			return true;
 		}
@@ -45,22 +44,16 @@ function isUserValid(username, password) {
 	return false;
 }
 
-function singIn(user, pass) {
-
-	for (var i=0; i < database.length; i++) {
-		if(database.[i].username === username&&&
-			database[i].password === password) {
-			console.log(newsFeed);
-		} else {
-			alert("Sorry, wrong username or password");
-		}
+function singIn(username, password) {
+	if (isUserValid(username, password)) {
+		console.log(newsfeed);
+	} else {
+		alert("Sorry, wrong username and password");
 	}
-	// if (user === database[0].username && 
-	// 	pass === database[0].password) {
-	// 	console.log(newsFeed); {
-	// } else {
-	// 	alert("Sorry wrong username or password")
-	// }
 }
+
+
+var userNamePrompt = prompt("What\'s your username?");
+var passwordPrompt = prompt("what\'s your password?");
 
 signIn(userNamePrompt, passwordPrompt);
