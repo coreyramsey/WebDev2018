@@ -11,4 +11,13 @@ button.addEventListener("click", function() {
 	}
 })
 
+button.addEventListener("keypress", function() {
+	if (input.value.length > 0 && event.keyCode === 13) {
+		var li = document.createElement("li");
+		li.appendChild(document.createTextNode(input.value));
+		ul.appendChild(li);
+		input.value = "";
+	}
+})
+
 
