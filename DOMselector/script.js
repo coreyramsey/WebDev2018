@@ -13,11 +13,15 @@ function createListElement() {
 		input.value = "";
 }
 
-button.addEventListener("click", function() {
+function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
 	}
-})
+}
+
+function addListAfterKeypress
+
+button.addEventListener("click", addListAfterClick;
 
 button.addEventListener("keypress", function() {
 	if (inputLength() > 0 && event.keyCode === 13) {
