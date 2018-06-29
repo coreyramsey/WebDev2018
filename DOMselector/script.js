@@ -8,34 +8,23 @@ function inputLength() {
 
 function createListElement() {
 	var li = document.createElement("li");
-		li.appendChild(document.createTextNode(input.value));
-		ul.appendChild(li);
-		input.value = "";
+	li.appendChild(document.createTextNode(input.value));
+	ul.appendChild(li);
+	input.value = "";
 }
 
-//List after Click
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
 	}
 }
 
-
-//List after Keypress
 function addListAfterKeypress(event) {
 	if (inputLength() > 0 && event.keyCode === 13) {
 		createListElement();
 	}
 }
 
-
 button.addEventListener("click", addListAfterClick);
 
-button.addEventListener("keypress", addListAfterKeypress);
-	
-
-
-
-//adding comments
-
-
+input.addEventListener("keypress", addListAfterKeypress);
