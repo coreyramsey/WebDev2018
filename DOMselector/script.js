@@ -35,10 +35,17 @@ function inputLength() {
 }
 
 function createListElement() {
+	var btn = document.createElement("button");
+	btn.innerHTML = "Delete";
+	btn.onclick = removeParent;
+
 	var li = document.createElement("li");
 	li.appendChild(document.createTextNode(input.value));
+	li.innerHTML = li.innerHTML + " ";
+	li.appendChild(btn);
+
 	ul.appendChild(li);
-	input.value = "";
+	input.value="";
 }
 
 function addListAfterClick() {
